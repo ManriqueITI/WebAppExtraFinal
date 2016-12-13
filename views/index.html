@@ -1,0 +1,20 @@
+﻿$def with (form,result)
+
+<form name="main" method="post">
+ $if not form.valid: <p class="error">Try again:</p>
+ $:form.render()
+
+<input type="submit" /> </form>
+
+
+<table border="10px" bordercolor="black" ALIGN=center>
+    <th> PELICULAS</th>
+    <th> FORMATO </th>
+    <th> CLIENTE</th>
+    <th> TIEMPO </th>
+    <th> TOTAL</th>
+     $for row in result:
+      <tr>
+          <td>$row.pelicula</td> <td>$row.formato</td> <td>$row.cliente</td> <td>$row.tiempo </td> <td>$row.total </td>
+      </tr>
+</table>
